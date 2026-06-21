@@ -253,6 +253,31 @@
   }
   .proj-desc{ font-size:.91rem; color:var(--ink); line-height:1.6; }
 
+  /* ---------- Project media (embeds / outbound links) ---------- */
+  .proj-embed{
+    margin-top:2px; padding-top:14px; border-top:1px dashed var(--grid-line);
+  }
+  .embed-label{
+    font-family:var(--mono); font-size:.65rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--ink-soft); display:flex; justify-content:space-between; margin-bottom:8px;
+  }
+  .embed-label span:last-child{ color:var(--accent); }
+  .embed-frame{
+    position:relative; width:100%; aspect-ratio:16/9;
+    border:1.5px solid var(--ink); background:var(--paper-deep); overflow:hidden;
+  }
+  .embed-frame iframe{
+    position:absolute; inset:0; width:100%; height:100%; border:none; display:block;
+  }
+  .proj-link{
+    margin-top:auto; padding-top:12px;
+    font-family:var(--mono); font-size:.74rem; letter-spacing:.05em; text-transform:uppercase;
+    text-decoration:none; color:var(--ink);
+    display:inline-flex; align-items:center; gap:6px; align-self:flex-start;
+    border-bottom:1.5px solid var(--accent);
+  }
+  .proj-link:hover{ color:var(--accent); }
+
   /* ---------- Education ---------- */
   .edu-card{ border:1.5px solid var(--ink); background:var(--surface); padding:26px; }
   .edu-school{ font-family:var(--display); font-weight:700; font-size:1.25rem; }
@@ -472,7 +497,7 @@
       <div class="section-head">
         <p class="eyebrow">Seçili Çalışmalar</p>
         <h2 class="section-title">Projeler</h2>
-        <p class="section-intro">Ders tasarımından oyunlaştırılmış uygulamalara, teknik resim öğretimine kadar farklı ölçeklerde üç proje.</p>
+        <p class="section-intro">Ders tasarımından oyunlaştırılmış uygulamalara, teknik resim öğretiminden VR simülasyonuna kadar farklı ölçeklerde sekiz proje.</p>
       </div>
 
       <div class="projects-grid">
@@ -489,6 +514,7 @@
             etkinlik, Wordwall ile değerlendirme, konu infografiği ve içerik videolarını kapsayan bir LMS sitesi oluşturup
             GitHub Pages üzerinden yayınladık. İçerik yönetiminden ve Unity ile geliştirilen eğitici oyun bileşeninden sorumlu oldum.
           </p>
+          <a class="proj-link" href="https://zhentilar.github.io/ueproje" target="_blank" rel="noopener">Siteyi gör →</a>
         </article>
 
         <article class="proj-card">
@@ -504,6 +530,12 @@
             oyunlaştırma mekanikleri içeren bir eğitsel mobil uygulamayı ekip olarak geliştirdik. Dark pattern örneklerini
             gösteren sayfaları, profil sayfasını ve takas dükkanı modülünü kodladım.
           </p>
+          <div class="proj-embed">
+            <p class="embed-label"><span>Figma Prototip</span><span>Canlı</span></p>
+            <div class="embed-frame">
+              <iframe src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fy3U1s1kUTD7Tcl3BLUwUQi%2FMobil-Programlama-Vize%3Fnode-id%3D37-199%26t%3D2Jkkfzmb2cNm0M3f-1" allowfullscreen loading="lazy" title="Mikro Ödeme Farkındalık Uygulaması — Figma Prototip"></iframe>
+            </div>
+          </div>
         </article>
 
         <article class="proj-card">
@@ -518,6 +550,79 @@
             HUZEM bünyesinde, meslek liselerinde materyal olarak kullanılmak üzere Unity ile üç modüllü bir teknik resim
             eğitim uygulaması geliştirdim: yeşil perde çekimlerinden oluşan bir video modülü, bir noktanın konumuna göre üç
             düzlemdeki izdüşümlerini dinamik görselleştiren modül ve 20 geometrik şeklin görünüşlerini çıkarmaya yönelik modül.
+          </p>
+        </article>
+
+        <article class="proj-card">
+          <div class="proj-top">
+            <h3 class="proj-title">İSG Eğitimi — Articulate Storyline &amp; SCORM Modülü</h3>
+            <span class="proj-rev">REV. 04</span>
+          </div>
+          <div class="proj-tags">
+            <span class="tag">Articulate Storyline</span><span class="tag">SCORM</span><span class="tag">Moodle LMS</span>
+          </div>
+          <p class="proj-desc">
+            Hacettepe Üniversitesi personeline yönelik temel iş sağlığı ve güvenliği eğitimini etkileşimli bir e‑öğrenme
+            moduline dönüştürdüm. Dallanan senaryo yapısı, doğru/yanlış karar düğümleri ve düzeltici geri bildirimlerle
+            kurguladığım modülü MEB standartlarına uygun SCORM paketi olarak Moodle üzerinden yayına aldım.
+          </p>
+        </article>
+
+        <article class="proj-card">
+          <div class="proj-top">
+            <h3 class="proj-title">İş Yeri Risk Farkındalık Oyunu</h3>
+            <span class="proj-rev">REV. 05</span>
+          </div>
+          <div class="proj-tags">
+            <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Oyunlaştırma</span>
+          </div>
+          <p class="proj-desc">
+            Zamana karşı yarış mekaniğiyle çalışanların sanal bir ortamda iş yeri risklerini tespit ettiği bir farkındalık
+            oyunu tasarladım ve geliştirdim. Aynı senaryo, daha sonra geliştirdiğim VR simülasyonunun da temelini oluşturdu.
+          </p>
+        </article>
+
+        <article class="proj-card">
+          <div class="proj-top">
+            <h3 class="proj-title">VR Risk Simülasyonu</h3>
+            <span class="proj-rev">REV. 06</span>
+          </div>
+          <div class="proj-tags">
+            <span class="tag">Unity</span><span class="tag">XR Interaction Toolkit</span><span class="tag">VR</span>
+          </div>
+          <p class="proj-desc">
+            Risk farkındalık oyununun senaryosunu sanal gerçeklik ortamına taşıdım. XR Interaction Toolkit ile nesne
+            etkileşimi ve el hareketlerine dayalı, baştan sona etkileşimli bir VR simülasyonu geliştirdim.
+          </p>
+        </article>
+
+        <article class="proj-card">
+          <div class="proj-top">
+            <h3 class="proj-title">Hyper‑Casual Mobil Oyunlar</h3>
+            <span class="proj-rev">REV. 07</span>
+          </div>
+          <div class="proj-tags">
+            <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Game Design</span>
+          </div>
+          <p class="proj-desc">
+            Hoody Studios'ta katkıda bulunduğum hyper‑casual mobil oyunlardan bazıları: Dribble Run, Delivery Guy, Sharp
+            Shooter, Lider Scooter ve Cover Shooter. Tap, swipe, dodge, jump/slide, collect ve timing mekanikleriyle
+            tasarlanan bu oyunlardan Sharp Shooter, ilk test aşamasında 0,71 $ CPI değerine ulaştı.
+          </p>
+        </article>
+
+        <article class="proj-card">
+          <div class="proj-top">
+            <h3 class="proj-title">Eğitsel Video Üretimi — MEB Projesi</h3>
+            <span class="proj-rev">REV. 08</span>
+          </div>
+          <div class="proj-tags">
+            <span class="tag">Storyboard</span><span class="tag">Video Prodüksiyon</span><span class="tag">Öğretim Tasarımı</span>
+          </div>
+          <p class="proj-desc">
+            Milli Eğitim Bakanlığı yürütücülüğündeki bir projede ilköğretim öğrencileri için 50'den fazla içeriği
+            storyboard'dan üretime hazır hale getirdim; öğretim tasarımcıları, video ekibi ve akademik danışmanlarla
+            süreci koordine ettim.
           </p>
         </article>
       </div>
