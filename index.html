@@ -3,644 +3,754 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Latif Çetin — Eğitim Teknolojileri Portfolyosu</title>
+<title>Latif Çetin — Öğretim Teknolojileri &amp; Dijital İçerik</title>
+<meta name="description" content="Latif Çetin — Öğretim tasarımı, e-öğrenme ve Unity/XR geliştirme alanlarında çalışan eğitim teknolojisti.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230F2A45'/%3E%3Cpath d='M20 80 L50 20 L80 80 Z' fill='none' stroke='%23C2511E' stroke-width='7'/%3E%3Ccircle cx='50' cy='80' r='4' fill='%23C2511E'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy-900:#0A1B2A;
-    --navy-800:#102538;
-    --navy-700:#1A3A52;
-    --line:rgba(237,242,244,0.16);
-    --line-soft:rgba(237,242,244,0.07);
-    --paper:#EDF2F4;
-    --paper-dim:#9FB2BE;
-    --orange:#FF6A39;
-    --cyan:#6FD6E0;
-    --font-display:'Space Grotesk', sans-serif;
-    --font-body:'Inter', sans-serif;
-    --font-mono:'IBM Plex Mono', monospace;
+    --paper:#EEF4FA;
+    --paper-deep:#E1EBF4;
+    --grid-line:#C7D9E8;
+    --ink:#0F2A45;
+    --ink-soft:#42607D;
+    --accent:#C2511E;
+    --surface:#FFFFFF;
+
+    --display:'Space Grotesk', sans-serif;
+    --body:'Inter', sans-serif;
+    --mono:'JetBrains Mono', monospace;
+
+    --space-1:8px;
+    --space-2:16px;
+    --space-3:24px;
+    --space-4:40px;
+    --space-5:64px;
+    --space-6:104px;
+
+    --maxw:1140px;
   }
 
-  *{box-sizing:border-box; margin:0; padding:0;}
-
-  html{scroll-behavior:smooth;}
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
 
   body{
+    margin:0;
     background:
-      repeating-linear-gradient(0deg, var(--line-soft) 0px, var(--line-soft) 1px, transparent 1px, transparent 40px),
-      repeating-linear-gradient(90deg, var(--line-soft) 0px, var(--line-soft) 1px, transparent 1px, transparent 40px),
-      var(--navy-900);
-    color:var(--paper);
-    font-family:var(--font-body);
-    line-height:1.55;
-    font-size:16px;
+      repeating-linear-gradient(0deg, transparent, transparent 31px, var(--grid-line) 31px, var(--grid-line) 32px),
+      repeating-linear-gradient(90deg, transparent, transparent 31px, var(--grid-line) 31px, var(--grid-line) 32px),
+      var(--paper);
+    background-blend-mode:multiply;
+    color:var(--ink);
+    font-family:var(--body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
   }
 
-  a{color:inherit;}
+  .container{ max-width:var(--maxw); margin:0 auto; padding-inline:clamp(20px, 5vw, 48px); }
 
-  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+  a{ color:inherit; }
+  ::selection{ background:var(--accent); color:var(--surface); }
 
-  /* ---------- TITLE BLOCK ---------- */
-  .titleblock{
-    border-bottom:1px solid var(--line);
-    background:linear-gradient(180deg, rgba(16,37,56,0.6), transparent);
-    padding:22px 0;
-  }
-  .titleblock .wrap{
+  :focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+
+  h1,h2,h3{ font-family:var(--display); margin:0; color:var(--ink); }
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--accent);
     display:flex;
     align-items:center;
-    gap:24px;
-    flex-wrap:wrap;
-  }
-  .seal{
-    width:56px; height:56px;
-    border:1.5px solid var(--orange);
-    display:flex; align-items:center; justify-content:center;
-    font-family:var(--font-display);
-    font-weight:700;
-    font-size:18px;
-    letter-spacing:1px;
-    color:var(--orange);
-    flex-shrink:0;
-  }
-  .titleblock-name{
-    font-family:var(--font-display);
-    font-size:22px;
-    font-weight:700;
-    letter-spacing:0.3px;
-  }
-  .titleblock-role{
-    font-family:var(--font-mono);
-    font-size:12px;
-    color:var(--cyan);
-    text-transform:uppercase;
-    letter-spacing:1.5px;
-    margin-top:3px;
-  }
-  .titleblock-meta{
-    margin-left:auto;
-    display:flex;
-    gap:22px;
-    flex-wrap:wrap;
-    font-family:var(--font-mono);
-    font-size:11.5px;
-    color:var(--paper-dim);
-  }
-  .titleblock-meta div span{
-    display:block;
-    color:var(--paper);
-    font-size:12.5px;
-    margin-top:2px;
-  }
-  .titleblock-meta a{text-decoration:none;}
-  .titleblock-meta a:hover{color:var(--cyan);}
-
-  /* ---------- HERO ---------- */
-  .hero{padding:64px 0 40px;}
-  .hero-eyebrow{
-    font-family:var(--font-mono);
-    font-size:12px;
-    color:var(--orange);
-    text-transform:uppercase;
-    letter-spacing:2px;
+    gap:10px;
     margin-bottom:14px;
   }
-  .hero h1{
-    font-family:var(--font-display);
-    font-weight:600;
-    font-size:clamp(28px, 4vw, 42px);
-    line-height:1.25;
-    max-width:760px;
-  }
-  .hero h1 em{
-    font-style:normal;
-    color:var(--cyan);
-  }
-  .hero p{
-    margin-top:18px;
-    max-width:620px;
-    color:var(--paper-dim);
-    font-size:16px;
-  }
-
-  .diagram-wrap{margin-top:46px;}
-  .diagram-wrap svg{width:100%; height:auto; display:block;}
-  .node-label{
-    font-family:var(--font-mono);
-    font-size:11px;
-    fill:var(--paper-dim);
-  }
-  .node-label.accent{fill:var(--cyan);}
-  .node-circle{fill:var(--navy-800); stroke:var(--paper-dim); stroke-width:1.4;}
-  .node-circle.start{stroke:var(--orange);}
-  .node-circle.end{stroke:var(--cyan);}
-  .path-line{
-    fill:none;
-    stroke:var(--line);
-    stroke-width:1.4;
-  }
-  .path-draw{
-    stroke-dasharray:300;
-    stroke-dashoffset:300;
-    animation:draw 1.6s ease forwards;
-  }
-  .path-draw.d2{animation-delay:.15s;}
-  .path-draw.d3{animation-delay:.5s;}
-  .path-draw.d4{animation-delay:.65s;}
-  .path-draw.d5{animation-delay:1s;}
-  .path-draw.d6{animation-delay:1.1s;}
-  @keyframes draw{to{stroke-dashoffset:0;}}
-  @media (prefers-reduced-motion: reduce){
-    .path-draw{animation:none; stroke-dashoffset:0;}
-  }
-
-  /* ---------- SECTION HEADERS ---------- */
-  .section{padding:54px 0;}
-  .section.bordered{border-top:1px solid var(--line);}
-  .section-head{
-    display:flex;
-    align-items:baseline;
-    gap:14px;
-    margin-bottom:30px;
-  }
-  .section-num{
-    font-family:var(--font-mono);
-    font-size:12px;
-    color:var(--orange);
-  }
-  .section-head h2{
-    font-family:var(--font-display);
-    font-size:22px;
-    font-weight:600;
-    text-transform:uppercase;
-    letter-spacing:1px;
-  }
-
-  /* ---------- ABOUT ---------- */
-  .about p{max-width:680px; color:var(--paper-dim); font-size:16px;}
-  .about p + p{margin-top:14px;}
-
-  /* ---------- PROJECT PANELS ---------- */
-  .panel-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-  }
-  @media (max-width:760px){
-    .panel-grid{grid-template-columns:1fr;}
-  }
-  .panel{
-    background:var(--navy-900);
-    padding:26px 26px 22px;
-    display:flex;
-    flex-direction:column;
-    position:relative;
-  }
-  .panel-eyebrow{
-    font-family:var(--font-mono);
-    font-size:11px;
-    color:var(--paper-dim);
-    letter-spacing:1px;
-    display:flex;
-    justify-content:space-between;
-  }
-  .panel-eyebrow .tag-list{color:var(--cyan);}
-  .panel h3{
-    font-family:var(--font-display);
-    font-size:18px;
-    font-weight:600;
-    margin-top:12px;
-    line-height:1.3;
-  }
-  .chips{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px;
-    margin-top:12px;
-  }
-  .chip{
-    font-family:var(--font-mono);
-    font-size:10.5px;
-    border:1px solid var(--line);
-    color:var(--paper-dim);
-    padding:3px 8px;
-    text-transform:uppercase;
-    letter-spacing:.4px;
-  }
-  .panel p.desc{
-    margin-top:14px;
-    color:var(--paper-dim);
-    font-size:14.5px;
-    flex-grow:1;
-  }
-  .panel-link{
-    margin-top:18px;
-    padding-top:14px;
-    border-top:1px solid var(--line-soft);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    font-family:var(--font-mono);
-    font-size:12.5px;
-  }
-  .panel-link a{
-    text-decoration:none;
-    color:var(--orange);
-    display:flex;
-    align-items:center;
-    gap:6px;
-  }
-  .panel-link a:hover{color:var(--cyan);}
-  .panel-link .todo{
-    color:#5C7385;
-    font-size:11px;
-  }
-
-  /* ---------- DİĞER ÇALIŞMALAR ---------- */
-  .mini-list{
-    display:flex;
-    flex-direction:column;
-    border-top:1px solid var(--line);
-  }
-  .mini-row{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
-    padding:16px 0;
-    border-bottom:1px solid var(--line-soft);
-    flex-wrap:wrap;
-  }
-  .mini-row-title{
-    font-family:var(--font-display);
-    font-size:15.5px;
-    font-weight:600;
-  }
-  .mini-row-tags{
-    font-family:var(--font-mono);
-    font-size:11px;
-    color:var(--paper-dim);
-    margin-top:3px;
-  }
-  .mini-row a{
-    font-family:var(--font-mono);
-    font-size:12.5px;
-    color:var(--orange);
-    text-decoration:none;
-    white-space:nowrap;
-  }
-  .mini-row a:hover{color:var(--cyan);}
-
-  /* ---------- SKILLS LEGEND ---------- */
-  .legend{
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:22px 40px;
-  }
-  @media (max-width:700px){.legend{grid-template-columns:1fr;}}
-  .legend-group-title{
-    font-family:var(--font-mono);
-    font-size:11px;
-    color:var(--orange);
-    text-transform:uppercase;
-    letter-spacing:1.5px;
-    margin-bottom:10px;
-    display:flex;
-    align-items:center;
-    gap:8px;
-  }
-  .legend-group-title::before{
+  .eyebrow::before{
     content:"";
-    width:10px; height:10px;
-    border:1.4px solid var(--orange);
+    width:18px; height:1.5px;
+    background:var(--accent);
     display:inline-block;
   }
-  .legend-items{
-    color:var(--paper-dim);
-    font-size:14.5px;
-    line-height:1.9;
+
+  /* ---------- Reveal-on-scroll (respects reduced motion) ---------- */
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+    .reveal.is-visible{ opacity:1; transform:none; }
   }
 
-  /* ---------- FOOTER / CONTACT ---------- */
-  footer{
-    border-top:1px solid var(--line);
-    padding:46px 0 60px;
+  /* ---------- Header / Nav ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(238,244,250,.86);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--ink);
   }
-  .footer-grid{
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:30px;
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-block:14px;
+    gap:16px; flex-wrap:wrap;
   }
-  .footer-cta h2{
-    font-family:var(--font-display);
-    font-size:24px;
-    font-weight:600;
-    max-width:380px;
+  .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .brand-mark{
+    width:30px; height:30px;
+    border:1.5px solid var(--ink);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--mono); font-weight:700; font-size:.78rem;
+    color:var(--accent);
+    flex-shrink:0;
   }
-  .footer-cta p{
-    margin-top:10px;
-    color:var(--paper-dim);
-    font-size:14.5px;
-    max-width:380px;
+  .brand-name{ font-family:var(--mono); font-size:.82rem; letter-spacing:.04em; color:var(--ink); }
+  .nav-links{ list-style:none; display:flex; gap:22px; margin:0; padding:0; flex-wrap:wrap; }
+  .nav-links a{
+    font-family:var(--mono); font-size:.74rem; letter-spacing:.08em; text-transform:uppercase;
+    text-decoration:none; color:var(--ink-soft); padding-bottom:3px; border-bottom:1px solid transparent;
   }
-  .footer-contacts{
-    font-family:var(--font-mono);
-    font-size:13px;
-    display:flex;
-    flex-direction:column;
-    gap:8px;
+  .nav-links a:hover{ color:var(--ink); border-color:var(--accent); }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    display:grid;
+    grid-template-columns:1.15fr 1fr;
+    gap:var(--space-4);
+    align-items:center;
+    padding-block:var(--space-6) var(--space-5);
   }
-  .footer-contacts a{text-decoration:none; color:var(--paper);}
-  .footer-contacts a:hover{color:var(--cyan);}
-  .footer-bottom{
-    margin-top:40px;
-    padding-top:18px;
-    border-top:1px solid var(--line-soft);
-    font-family:var(--font-mono);
-    font-size:11px;
-    color:#5C7385;
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:10px;
+  @media (max-width:880px){
+    .hero{ grid-template-columns:1fr; padding-block:var(--space-4) var(--space-4); }
   }
 
-  :focus-visible{
-    outline:2px solid var(--cyan);
-    outline-offset:2px;
+  .hero-title{
+    font-size:clamp(2.3rem, 6.4vw, 4rem);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.01em;
+    line-height:.97;
+    margin-bottom:18px;
   }
+  .hero-lede{
+    font-size:clamp(1rem, 1.6vw, 1.12rem);
+    color:var(--ink);
+    max-width:54ch;
+    margin-bottom:18px;
+  }
+  .hero-meta{
+    font-family:var(--mono); font-size:.78rem; color:var(--ink-soft);
+    margin-bottom:30px; letter-spacing:.02em;
+  }
+  .hero-cta{ display:flex; gap:12px; flex-wrap:wrap; }
+
+  .btn{
+    font-family:var(--mono); font-size:.78rem; letter-spacing:.06em; text-transform:uppercase;
+    text-decoration:none; padding:12px 20px; border:1.5px solid var(--ink);
+    background:transparent; color:var(--ink); cursor:pointer;
+    transition:background .25s ease, color .25s ease, border-color .25s ease;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn:hover{ background:var(--ink); color:var(--paper); }
+  .btn-primary{ background:var(--accent); border-color:var(--accent); color:var(--surface); }
+  .btn-primary:hover{ background:var(--ink); border-color:var(--ink); color:var(--paper); }
+
+  /* ---------- Hero widget (the "sheet stack") ---------- */
+  .hero-widget-wrap{ position:relative; }
+  .hero-widget-wrap::before{
+    content:"";
+    position:absolute; inset:0;
+    transform:translate(9px,9px);
+    background:var(--paper-deep);
+    border:1.5px solid var(--ink);
+    z-index:0;
+  }
+  .hero-widget{
+    position:relative; z-index:1;
+    background:var(--surface);
+    border:1.5px solid var(--ink);
+    padding:18px 18px 16px;
+  }
+  .widget-label{
+    font-family:var(--mono); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-soft); display:flex; justify-content:space-between; margin-bottom:10px;
+  }
+  .widget-label span:last-child{ color:var(--accent); }
+  .ortho-svg{ width:100%; height:auto; display:block; touch-action:none; }
+  .ortho-svg .hit{ fill:transparent; cursor:grab; }
+  .ortho-svg .hit:active{ cursor:grabbing; }
+  .view-label{ font-family:var(--mono); font-size:8.5px; letter-spacing:.06em; fill:var(--ink-soft); text-transform:uppercase; }
+  .note-label{ font-family:var(--mono); font-size:7.5px; fill:var(--ink-soft); text-transform:uppercase; }
+
+  .widget-foot{
+    display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;
+    margin-top:12px; padding-top:12px; border-top:1px dashed var(--grid-line);
+  }
+  .widget-caption{ font-size:.74rem; color:var(--ink-soft); max-width:30ch; }
+  .coords{ font-family:var(--mono); font-size:.76rem; color:var(--ink); white-space:nowrap; }
+  .coords b{ color:var(--accent); font-weight:600; }
+
+  /* ---------- Sections (generic) ---------- */
+  section{ padding-block:var(--space-5); }
+  .section-head{ margin-bottom:var(--space-3); }
+  .section-title{
+    font-size:clamp(1.5rem, 3vw, 2.1rem);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.01em;
+  }
+  .section-intro{ max-width:62ch; color:var(--ink-soft); margin-top:10px; font-size:.96rem; }
+
+  hr.hairline{ border:none; border-top:1px solid var(--grid-line); margin:0; }
+
+  /* ---------- Experience ---------- */
+  .exp-item{ padding-block:var(--space-3); border-bottom:1px solid var(--grid-line); }
+  .exp-item:first-of-type{ border-top:1px solid var(--grid-line); }
+  .exp-head{
+    display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:6px 16px;
+  }
+  .exp-role{ font-family:var(--display); font-size:1.18rem; font-weight:600; }
+  .exp-org{ font-family:var(--mono); font-size:.78rem; color:var(--ink-soft); margin-left:2px; }
+  .exp-dates{ font-family:var(--mono); font-size:.72rem; color:var(--ink-soft); letter-spacing:.04em; white-space:nowrap; }
+
+  .exp-bar-track{
+    position:relative; height:6px; max-width:560px;
+    background:var(--paper-deep); border:1px solid var(--grid-line);
+    margin:16px 0 18px;
+  }
+  .exp-bar-fill{
+    position:absolute; top:-1px; bottom:-1px; background:var(--accent);
+  }
+  .tick{
+    position:absolute; top:50%; width:8px; height:8px; border-radius:50%;
+    background:var(--accent); border:2px solid var(--surface);
+    transform:translate(-50%,-50%);
+  }
+
+  .exp-list{ margin:0; padding-left:20px; font-size:.94rem; color:var(--ink); }
+  .exp-list li{ margin-bottom:7px; }
+  .exp-list li::marker{ color:var(--accent); }
+
+  /* ---------- Projects ---------- */
+  .projects-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:22px;
+  }
+  .proj-card{
+    border:1.5px solid var(--ink); background:var(--surface);
+    padding:22px; display:flex; flex-direction:column; gap:12px;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .proj-card:hover{ transform:translate(-3px,-3px); box-shadow:6px 6px 0 var(--paper-deep), 6px 6px 0 1.5px var(--ink); }
+  }
+  .proj-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:10px; }
+  .proj-title{ font-family:var(--display); font-weight:600; font-size:1.05rem; line-height:1.3; }
+  .proj-rev{ font-family:var(--mono); font-size:.65rem; color:var(--ink-soft); white-space:nowrap; padding-top:3px; }
+  .proj-tags{ display:flex; flex-wrap:wrap; gap:6px; }
+  .tag{
+    border:1px solid var(--ink-soft); font-family:var(--mono); font-size:.65rem; text-transform:uppercase;
+    letter-spacing:.04em; padding:3px 8px; color:var(--ink-soft);
+  }
+  .proj-desc{ font-size:.91rem; color:var(--ink); line-height:1.6; }
+
+  /* ---------- Education ---------- */
+  .edu-card{ border:1.5px solid var(--ink); background:var(--surface); padding:26px; }
+  .edu-school{ font-family:var(--display); font-weight:700; font-size:1.25rem; }
+  .edu-dept{ font-family:var(--mono); font-size:.82rem; color:var(--ink-soft); margin-top:6px; }
+  .edu-dates{ font-family:var(--mono); font-size:.74rem; color:var(--ink-soft); margin-top:4px; }
+  .gpa-row{ margin-top:18px; max-width:380px; }
+  .gpa-label{ display:flex; justify-content:space-between; font-family:var(--mono); font-size:.72rem; color:var(--ink-soft); margin-bottom:6px; text-transform:uppercase; letter-spacing:.04em; }
+  .gpa-track{ height:6px; background:var(--paper-deep); border:1px solid var(--grid-line); position:relative; }
+  .gpa-fill{ position:absolute; inset:-1px auto -1px -1px; width:87.25%; background:var(--accent); }
+
+  /* ---------- Skills legend ---------- */
+  .legend{ border:1.5px solid var(--ink); background:var(--surface); padding:30px clamp(18px,4vw,34px); }
+  .legend-title{
+    font-family:var(--mono); font-size:.74rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-soft); padding-bottom:16px; border-bottom:1px solid var(--grid-line); margin-bottom:6px;
+  }
+  .legend-row{
+    display:flex; gap:18px; padding:13px 0; border-bottom:1px dashed var(--grid-line);
+    align-items:baseline; flex-wrap:wrap;
+  }
+  .legend-row:last-child{ border-bottom:none; }
+  .legend-key{
+    display:flex; align-items:center; gap:9px; min-width:190px;
+    font-family:var(--mono); font-size:.74rem; text-transform:uppercase; letter-spacing:.04em;
+    color:var(--ink-soft); flex-shrink:0;
+  }
+  .legend-swatch{ width:10px; height:10px; border:1.5px solid var(--ink); flex-shrink:0; background:var(--paper-deep); }
+  .legend-chips{ display:flex; flex-wrap:wrap; gap:7px; flex:1; min-width:200px; }
+  .chip{
+    background:var(--paper-deep); border:1px solid var(--grid-line); color:var(--ink);
+    font-size:.82rem; padding:5px 11px;
+  }
+
+  /* ---------- Contact title block ---------- */
+  .titleblock{ border:2px solid var(--ink); margin-top:var(--space-2); }
+  .tb-row{ display:grid; grid-template-columns:1fr 1fr; }
+  .tb-cell{ border-top:1px solid var(--ink); border-right:1px solid var(--ink); padding:16px 20px; min-width:0; }
+  .tb-row:first-child .tb-cell{ border-top:none; }
+  .tb-cell:last-child{ border-right:none; }
+  .tb-cell.span-2{ grid-column:1 / -1; border-right:none; }
+  .tb-label{
+    display:block; font-family:var(--mono); font-size:.64rem; letter-spacing:.07em;
+    text-transform:uppercase; color:var(--ink-soft); margin-bottom:5px;
+  }
+  .tb-value{ font-family:var(--mono); font-size:.92rem; color:var(--ink); word-break:break-word; }
+  .tb-value a{ color:var(--ink); text-decoration:none; border-bottom:1.5px solid var(--accent); }
+  .tb-value a:hover{ color:var(--accent); }
+  @media (max-width:640px){
+    .tb-row{ grid-template-columns:1fr; }
+    .tb-cell{ border-right:none; }
+  }
+
+  footer{ padding-block:var(--space-3) var(--space-5); text-align:center; }
+  .foot-note{ font-family:var(--mono); font-size:.72rem; color:var(--ink-soft); letter-spacing:.02em; }
 </style>
 </head>
 <body>
 
-  <!-- ================= TITLE BLOCK ================= -->
-  <div class="titleblock">
-    <div class="wrap">
-      <div class="seal">LÇ</div>
-      <div>
-        <div class="titleblock-name">Latif Çetin</div>
-        <div class="titleblock-role">Eğitim Teknolojileri &amp; Öğretim Tasarımı</div>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top">
+      <span class="brand-mark">LÇ</span>
+      <span class="brand-name">LATİF ÇETİN</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#ozet">Özet</a></li>
+      <li><a href="#deneyim">Deneyim</a></li>
+      <li><a href="#projeler">Projeler</a></li>
+      <li><a href="#beceriler">Beceriler</a></li>
+      <li><a href="#iletisim">İletişim</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===================== HERO ===================== -->
+  <div class="container">
+    <section class="hero" id="ozet">
+      <div class="hero-copy">
+        <p class="eyebrow">Öğretim Tasarımı · E‑Öğrenme · Unity &amp; XR</p>
+        <h1 class="hero-title">Latif<br>Çetin</h1>
+        <p class="hero-lede">
+          Eğitim teknolojileri, öğretim tasarımı ve dijital içerik geliştirme alanlarında çalışıyorum.
+          Articulate Storyline, Moodle LMS ve SCORM ile e‑öğrenme içerikleri tasarlıyor; Unity, C# ve
+          XR Interaction Toolkit ile etkileşimli uygulamalar geliştiriyorum.
+        </p>
+        <p class="hero-meta">Hacettepe Üniversitesi — Bilgisayar ve Öğretim Teknolojileri Eğitimi · 2022–2026 (beklenen)</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#projeler">Projelere bak</a>
+          <a class="btn" href="#iletisim">İletişime geç</a>
+        </div>
       </div>
-      <div class="titleblock-meta">
-        <div>EĞİTİM<span>BÖTE · GPA 3.49/4.00</span></div>
-        <div>E-POSTA<span><a href="mailto:latifcetin043@gmail.com">latifcetin043@gmail.com</a></span></div>
-        <div>TELEFON<span>+90 531 874 87 94</span></div>
-        <div>LINKEDIN<span><a href="https://linkedin.com/in/latcetin" target="_blank" rel="noopener">/in/latcetin</a></span></div>
-        <div>GITHUB<span><a href="https://github.com/latifcetin" target="_blank" rel="noopener">/latifcetin</a></span></div>
+
+      <div class="hero-widget-wrap">
+        <div class="hero-widget">
+          <p class="widget-label"><span>İnteraktif Çizim</span><span>EDUSER'den ilham</span></p>
+          <svg class="ortho-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bir noktanın üç görünüşe izdüşümünü gösteren sürüklenebilir teknik çizim diyagramı">
+            <defs>
+              <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse">
+                <rect width="25" height="25" fill="var(--surface)"/>
+                <path d="M25 0H0V25" fill="none" stroke="var(--grid-line)" stroke-width="1"/>
+              </pattern>
+            </defs>
+
+            <!-- reference miter line -->
+            <line x1="170" y1="170" x2="320" y2="320" stroke="var(--grid-line)" stroke-width="1" stroke-dasharray="2 3"/>
+
+            <!-- boxes -->
+            <rect x="0" y="0" width="150" height="150" fill="url(#grid)" stroke="var(--ink)" stroke-width="1.5"/>
+            <rect x="170" y="0" width="150" height="150" fill="url(#grid)" stroke="var(--ink)" stroke-width="1.5"/>
+            <rect x="0" y="170" width="150" height="150" fill="url(#grid)" stroke="var(--ink)" stroke-width="1.5"/>
+
+            <text class="view-label" x="8" y="16">Ön Görünüş</text>
+            <text class="view-label" x="178" y="16">Yan Görünüş</text>
+            <text class="view-label" x="8" y="186">Üst Görünüş</text>
+            <text class="note-label" x="312" y="300" text-anchor="end">İzdüşüm: 3. Açı</text>
+            <text class="note-label" x="312" y="310" text-anchor="end">ISO 5456‑2</text>
+
+            <!-- dynamic guide lines -->
+            <line id="ft-line" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 3"/>
+            <line id="fs-line" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 3"/>
+            <polyline id="ts-line" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 3"/>
+
+            <!-- points -->
+            <circle id="front-pt" r="5" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>
+            <circle id="side-pt" r="5" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>
+            <circle id="top-pt" r="5" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>
+
+            <!-- hit areas (must be last to capture pointer events) -->
+            <rect id="front-hit" class="hit" x="0" y="0" width="150" height="150"/>
+            <rect id="side-hit" class="hit" x="170" y="0" width="150" height="150"/>
+            <rect id="top-hit" class="hit" x="0" y="170" width="150" height="150"/>
+          </svg>
+          <div class="widget-foot">
+            <p class="widget-caption">Noktayı sürükleyin — üç görünüş birlikte güncellenir.</p>
+            <p class="coords">X <b id="coord-x">62</b> Y <b id="coord-y">58</b> Z <b id="coord-z">38</b></p>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 
-  <!-- ================= HERO ================= -->
-  <section class="hero">
-    <div class="wrap">
-      <div class="hero-eyebrow">Portfolyo / Rev. 2026</div>
-      <h1>Senaryoyu okur, <em>etkileşime</em> dönüştürür, MEB standardında <em>SCORM</em> olarak paketlerim.</h1>
-      <p>Articulate Storyline, Moodle LMS ve SCORM ile e-öğrenme içerikleri tasarlıyor; Unity, C# ve XR Interaction Toolkit ile interaktif uygulamalar geliştiriyorum. Aşağıda, bir eğitim senaryosunun nasıl çalışır bir modüle dönüştüğünü gösteren gerçek projeler yer alıyor.</p>
-
-      <div class="diagram-wrap">
-        <svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg">
-          <path class="path-line path-draw d1" d="M450,70 L230,170"/>
-          <path class="path-line path-draw d2" d="M450,70 L670,170"/>
-          <path class="path-line path-draw d3" d="M230,170 L230,270"/>
-          <path class="path-line path-draw d4" d="M670,170 L670,270"/>
-          <path class="path-line path-draw d5" d="M230,270 L450,340"/>
-          <path class="path-line path-draw d6" d="M670,270 L450,340"/>
-
-          <circle class="node-circle start" cx="450" cy="70" r="22"/>
-          <text class="node-label accent" x="450" y="34" text-anchor="middle">SENARYO BAŞLANGICI</text>
-
-          <circle class="node-circle" cx="230" cy="170" r="18"/>
-          <text class="node-label" x="230" y="138" text-anchor="middle">DOĞRU KARAR</text>
-
-          <circle class="node-circle" cx="670" cy="170" r="18"/>
-          <text class="node-label" x="670" y="138" text-anchor="middle">YANLIŞ KARAR</text>
-
-          <circle class="node-circle" cx="230" cy="270" r="16"/>
-          <text class="node-label" x="230" y="240" text-anchor="middle">OLUMLU GERİ BİLDİRİM</text>
-
-          <circle class="node-circle" cx="670" cy="270" r="16"/>
-          <text class="node-label" x="670" y="240" text-anchor="middle">DÜZELTİCİ GERİ BİLDİRİM</text>
-
-          <circle class="node-circle end" cx="450" cy="340" r="22"/>
-          <text class="node-label accent" x="450" y="382" text-anchor="middle">MODÜL TAMAMLANDI · SCORM</text>
-        </svg>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= ABOUT ================= -->
-  <section class="section bordered about" id="ozet">
-    <div class="wrap">
+  <!-- ===================== EXPERIENCE ===================== -->
+  <div class="container">
+    <section id="deneyim" class="reveal">
       <div class="section-head">
-        <span class="section-num">01</span>
-        <h2>Özet</h2>
+        <p class="eyebrow">2022 — 2026</p>
+        <h2 class="section-title">Deneyim</h2>
+        <p class="section-intro">Yarı zamanlı içerik geliştirme, öğretim tasarımı ve oyun geliştirme rollerinde edindiğim deneyim — her çubuğun uzunluğu görevin süresiyle orantılıdır.</p>
       </div>
-      <p>Hacettepe Üniversitesi Bilgisayar ve Öğretim Teknolojileri Eğitimi bölümünden mezun oldum. Eğitim teknolojileri, öğretim tasarımı ve dijital içerik geliştirme alanlarında çalışıyorum.</p>
-      <p>LMS kursları, etkileşimli modüller, oyunlaştırılmış içerikler ve eğitsel video üretimi gibi projelerde edindiğim birikimi bu alanda sürdürüyorum. Aşağıdaki her proje, gerçek bir senaryo veya ihtiyaçtan üretime giden süreci gösteriyor.</p>
-    </div>
-  </section>
 
-  <!-- ================= PROJECTS ================= -->
-  <section class="section bordered" id="projeler">
-    <div class="wrap">
+      <div class="exp-item">
+        <div class="exp-head">
+          <div><span class="exp-role">İçerik Geliştirme Uzmanı</span><span class="exp-org">— Hacettepe Üniversitesi Uzaktan Eğitim Uygulama ve Araştırma Merkezi (Yarı Zamanlı)</span></div>
+          <div class="exp-dates">ARA 2023 — ARA 2025</div>
+        </div>
+        <div class="exp-bar-track">
+          <div class="exp-bar-fill" style="left:47.9%; width:50%;">
+            <span class="tick" style="left:0;"></span>
+            <span class="tick" style="left:100%;"></span>
+          </div>
+        </div>
+        <ul class="exp-list">
+          <li>İngilizce ve İSG dersleri dahil 20'den fazla Moodle LMS kursunun öğrenme akışını yeniden yapılandırarak 1.000'den fazla öğrenciye daha düzenli, takip edilebilir bir ders deneyimi sundum.</li>
+          <li>Üniversite personeline yönelik temel İSG eğitimi için Articulate Storyline ile etkileşimli e‑öğrenme modülleri geliştirip SCORM paketleri hazırladım.</li>
+          <li>İş yeri risk farkındalığı için iki uygulama geliştirdim: zamana karşı yarış mekaniğine dayalı bir tespit oyunu ve XR Interaction Toolkit ile bir VR simülasyonu.</li>
+          <li>Yeşil perde ile çekilen İSG eğitim videolarının ses temizleme ve kurgu işlemlerini yaparak Moodle LMS'e yayına hazır hale getirdim.</li>
+          <li>Stajyerlere ve yüksek lisans öğrencilerine Unity'ye giriş ve C# temelleri üzerine uygulamalı akran eğitimleri verdim.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-head">
+          <div><span class="exp-role">Öğretim Tasarımcısı</span><span class="exp-org">— Cyberotağ Teknoloji (Yarı Zamanlı)</span></div>
+          <div class="exp-dates">OCA 2025 — HAZ 2025</div>
+        </div>
+        <div class="exp-bar-track">
+          <div class="exp-bar-fill" style="left:75%; width:10.4%;">
+            <span class="tick" style="left:0;"></span>
+            <span class="tick" style="left:100%;"></span>
+          </div>
+        </div>
+        <ul class="exp-list">
+          <li>Milli Eğitim Bakanlığı yürütücülüğünde ilköğretim öğrencilerine yönelik eğitsel video materyali geliştirme projesinde görev aldım.</li>
+          <li>50'den fazla eğitim içeriğini öğrenme hedeflerine uygun şekilde üretime hazır hale getirdim.</li>
+          <li>İçerikleri storyboard formatında kurgulayarak video üretim sürecine uygun akışlar oluşturdum.</li>
+          <li>Üretimden dönen senaryoları inceleyip eksiklikleri tespit ettim, revize süreçlerini üretime hazır olana kadar yönettim.</li>
+          <li>Öğretim tasarımcıları, kurgu ekibi ve akademik danışmanlarla koordineli çalışarak materyallerin MEB okullarında kullanıma alınmasına katkı sağladım.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-head">
+          <div><span class="exp-role">Oyun Geliştirici</span><span class="exp-org">— Hoody Studios</span></div>
+          <div class="exp-dates">NİS 2022 — ARA 2022</div>
+        </div>
+        <div class="exp-bar-track">
+          <div class="exp-bar-fill" style="left:6.25%; width:16.6%;">
+            <span class="tick" style="left:0;"></span>
+            <span class="tick" style="left:100%;"></span>
+          </div>
+        </div>
+        <ul class="exp-list">
+          <li>Unity ve C# ile 5 hyper‑casual mobil oyun geliştirdim; Sharp Shooter ilk test aşamasında 0,71 $ CPI değerine ulaştı.</li>
+          <li>Tap, swipe, dodge, jump/slide, collect ve timing mekanikleriyle obstacle pattern'leri tasarlayıp Blend Tree tabanlı animasyon sistemleri kurdum.</li>
+          <li>Oyuncu deneyimini önceleyen seviye tasarımları oluşturdum; oyun akışı ve zorluk eğrisini her seviye için ayrı kurguladım.</li>
+          <li>Unity'nin iOS build pipeline'ını yapılandırarak oyunları yayınlanabilir seviyeye taşıdım.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <div class="container">
+    <section id="projeler" class="reveal">
       <div class="section-head">
-        <span class="section-num">02</span>
-        <h2>Proje Panelleri</h2>
+        <p class="eyebrow">Seçili Çalışmalar</p>
+        <h2 class="section-title">Projeler</h2>
+        <p class="section-intro">Ders tasarımından oyunlaştırılmış uygulamalara, teknik resim öğretimine kadar farklı ölçeklerde üç proje.</p>
       </div>
 
-      <div class="panel-grid">
+      <div class="projects-grid">
+        <article class="proj-card">
+          <div class="proj-top">
+            <h3 class="proj-title">LMS Tabanlı Ders Tasarımı</h3>
+            <span class="proj-rev">REV. 01</span>
+          </div>
+          <div class="proj-tags">
+            <span class="tag">Moodle</span><span class="tag">GitHub Pages</span><span class="tag">Öğretim Tasarımı</span>
+          </div>
+          <p class="proj-desc">
+            Ekip olarak belirlediğimiz bir öğrenme çıktısına yönelik ders tasarımı gerçekleştirdik: Padlet ile buz kırıcı
+            etkinlik, Wordwall ile değerlendirme, konu infografiği ve içerik videolarını kapsayan bir LMS sitesi oluşturup
+            GitHub Pages üzerinden yayınladık. İçerik yönetiminden ve Unity ile geliştirilen eğitici oyun bileşeninden sorumlu oldum.
+          </p>
+        </article>
 
-        <!-- PANEL 01 -->
-        <div class="panel">
-          <div class="panel-eyebrow"><span>DETAY 01</span><span class="tag-list">İSG · E-ÖĞRENME</span></div>
-          <h3>İSG Eğitimi — Articulate Storyline &amp; SCORM Modülü</h3>
-          <div class="chips">
-            <span class="chip">Articulate Storyline</span>
-            <span class="chip">SCORM</span>
-            <span class="chip">Moodle LMS</span>
+        <article class="proj-card">
+          <div class="proj-top">
+            <h3 class="proj-title">Mikro Ödeme Farkındalık Uygulaması</h3>
+            <span class="proj-rev">REV. 02</span>
           </div>
-          <p class="desc">Hacettepe Üniversitesi personeline yönelik temel iş sağlığı ve güvenliği eğitimini etkileşimli bir e-öğrenme moduline dönüştürdüm; MEB standartlarına uygun SCORM paketi olarak Moodle üzerinde yayına aldım.</p>
-          <div class="panel-link">
-            <!-- BURAYA LİNK EKLE: Articulate Review 360 / SCORM Cloud linki -->
-            <a href="PLACEHOLDER_LINK_STORYLINE" target="_blank" rel="noopener">Modülü incele →</a>
-            <span class="todo">link eklenecek</span>
+          <div class="proj-tags">
+            <span class="tag">React Native</span><span class="tag">Oyunlaştırma</span><span class="tag">Öğretim Tasarımı</span>
           </div>
-        </div>
+          <p class="proj-desc">
+            Mobil oyunlardaki mikro ödeme tuzaklarına dikkat çekmek için lider tahtası, takas dükkanı ve eşya sistemi gibi
+            oyunlaştırma mekanikleri içeren bir eğitsel mobil uygulamayı ekip olarak geliştirdik. Dark pattern örneklerini
+            gösteren sayfaları, profil sayfasını ve takas dükkanı modülünü kodladım.
+          </p>
+        </article>
 
-        <!-- PANEL 02 -->
-        <div class="panel">
-          <div class="panel-eyebrow"><span>DETAY 02</span><span class="tag-list">UNITY · OYUN</span></div>
-          <h3>İş Yeri Risk Farkındalık Oyunu</h3>
-          <div class="chips">
-            <span class="chip">Unity</span>
-            <span class="chip">C#</span>
-            <span class="chip">Oyunlaştırma</span>
+        <article class="proj-card">
+          <div class="proj-top">
+            <h3 class="proj-title">EDUSER — Teknik Resim Eğitim Uygulaması</h3>
+            <span class="proj-rev">REV. 03</span>
           </div>
-          <p class="desc">Zamana karşı yarış mekaniğiyle, çalışanların sanal bir ortamda iş yeri risklerini tespit ettiği bir farkındalık oyunu tasarladım ve geliştirdim.</p>
-          <div class="panel-link">
-            <!-- BURAYA LİNK EKLE: itch.io WebGL build ya da demo videosu -->
-            <a href="PLACEHOLDER_LINK_RISKGAME" target="_blank" rel="noopener">Oyunu dene →</a>
-            <span class="todo">link eklenecek</span>
+          <div class="proj-tags">
+            <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Eğitim Teknolojileri</span>
           </div>
-        </div>
-
-        <!-- PANEL 03 -->
-        <div class="panel">
-          <div class="panel-eyebrow"><span>DETAY 03</span><span class="tag-list">XR · VR</span></div>
-          <h3>VR Risk Simülasyonu</h3>
-          <div class="chips">
-            <span class="chip">Unity</span>
-            <span class="chip">XR Interaction Toolkit</span>
-            <span class="chip">VR</span>
-          </div>
-          <p class="desc">Aynı risk farkındalık senaryosunu sanal gerçeklik ortamına taşıdım; XR Interaction Toolkit ile baştan sona etkileşimli bir VR simülasyonu geliştirdim.</p>
-          <div class="panel-link">
-            <!-- BURAYA LİNK EKLE: VR gameplay demo videosu -->
-            <a href="PLACEHOLDER_LINK_VR" target="_blank" rel="noopener">Demoyu izle →</a>
-            <span class="todo">link eklenecek</span>
-          </div>
-        </div>
-
-        <!-- PANEL 04 -->
-        <div class="panel">
-          <div class="panel-eyebrow"><span>DETAY 04</span><span class="tag-list">MESLEKİ EĞİTİM</span></div>
-          <h3>EDUSER — Teknik Resim Eğitim Uygulaması</h3>
-          <div class="chips">
-            <span class="chip">Unity</span>
-            <span class="chip">C#</span>
-            <span class="chip">Eğitim Teknolojileri</span>
-          </div>
-          <p class="desc">Meslek liselerinde kullanılmak üzere üç modüllü bir teknik resim uygulaması geliştirdim: eğitim videoları, dinamik izdüşüm görselleştirme ve 20 farklı geometrik şekil üzerinde görünüş çıkarma pratiği.</p>
-          <div class="panel-link">
-            <!-- BURAYA LİNK EKLE: uygulama demo videosu -->
-            <a href="PLACEHOLDER_LINK_EDUSER" target="_blank" rel="noopener">Demoyu izle →</a>
-            <span class="todo">link eklenecek</span>
-          </div>
-        </div>
-
-        <!-- PANEL 05 -->
-        <div class="panel">
-          <div class="panel-eyebrow"><span>DETAY 05</span><span class="tag-list">LMS · TAKIM PROJESİ</span></div>
-          <h3>LMS Tabanlı Ders Tasarımı</h3>
-          <div class="chips">
-            <span class="chip">Moodle</span>
-            <span class="chip">GitHub Pages</span>
-            <span class="chip">Öğretim Tasarımı</span>
-          </div>
-          <p class="desc">Ekip olarak buz kırıcı etkinlik, değerlendirme, infografik ve içerik videolarını kapsayan tam bir öğrenme deneyimi tasarladık. İçerik yönetiminden ve oyunlaştırılmış Unity bileşeninden ben sorumlu oldum.</p>
-          <div class="panel-link">
-            <!-- BURAYA LİNK EKLE: GitHub Pages canlı site linki -->
-            <a href="PLACEHOLDER_LINK_LMSSITE" target="_blank" rel="noopener">Siteyi gör →</a>
-            <span class="todo">link eklenecek</span>
-          </div>
-        </div>
-
-        <!-- PANEL 06 -->
-        <div class="panel">
-          <div class="panel-eyebrow"><span>DETAY 06</span><span class="tag-list">MEB · VİDEO</span></div>
-          <h3>Eğitsel Video Üretimi — MEB Projesi</h3>
-          <div class="chips">
-            <span class="chip">Storyboard</span>
-            <span class="chip">Video Prodüksiyon</span>
-            <span class="chip">Koordinasyon</span>
-          </div>
-          <p class="desc">MEB yürütücülüğündeki bir projede ilköğretim öğrencileri için 50'den fazla içeriği storyboard'dan üretime hazır hale getirdim; video ekibi ve akademik danışmanlarla süreci koordine ettim.</p>
-          <div class="panel-link">
-            <!-- BURAYA LİNK EKLE: Üniversitenin YouTube kanalındaki ilgili videonun zaman damgalı linki, örn: https://youtu.be/XXXXX?t=225 -->
-            <a href="PLACEHOLDER_LINK_MEBVIDEO" target="_blank" rel="noopener">Videoyu izle →</a>
-            <span class="todo">link eklenecek</span>
-          </div>
-        </div>
-
+          <p class="proj-desc">
+            HUZEM bünyesinde, meslek liselerinde materyal olarak kullanılmak üzere Unity ile üç modüllü bir teknik resim
+            eğitim uygulaması geliştirdim: yeşil perde çekimlerinden oluşan bir video modülü, bir noktanın konumuna göre üç
+            düzlemdeki izdüşümlerini dinamik görselleştiren modül ve 20 geometrik şeklin görünüşlerini çıkarmaya yönelik modül.
+          </p>
+        </article>
       </div>
+    </section>
+  </div>
 
-      <!-- ---- DİĞER ÇALIŞMALAR ---- -->
-      <div class="mini-list">
-        <div class="mini-row">
-          <div>
-            <div class="mini-row-title">Hyper-Casual Mobil Oyunlar (Sharp Shooter ve diğerleri)</div>
-            <div class="mini-row-tags">Hoody Studios · Unity · C# · iOS Yayınlama</div>
-          </div>
-          <!-- BURAYA LİNK EKLE: oyun mağazası linki ya da gameplay videosu -->
-          <a href="PLACEHOLDER_LINK_HOODY" target="_blank" rel="noopener">İncele →</a>
-        </div>
-        <div class="mini-row">
-          <div>
-            <div class="mini-row-title">Mikro Ödeme Farkındalık Uygulaması</div>
-            <div class="mini-row-tags">React Native · Oyunlaştırma · Öğretim Tasarımı</div>
-          </div>
-          <!-- BURAYA LİNK EKLE: GitHub repo ya da demo videosu -->
-          <a href="PLACEHOLDER_LINK_MICROAPP" target="_blank" rel="noopener">İncele →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= SKILLS ================= -->
-  <section class="section bordered" id="beceriler">
-    <div class="wrap">
+  <!-- ===================== EDUCATION ===================== -->
+  <div class="container">
+    <section class="reveal">
       <div class="section-head">
-        <span class="section-num">03</span>
-        <h2>Beceriler &amp; Araçlar</h2>
+        <p class="eyebrow">Akademik</p>
+        <h2 class="section-title">Eğitim</h2>
       </div>
+      <div class="edu-card">
+        <div class="edu-school">Hacettepe Üniversitesi</div>
+        <div class="edu-dept">Bilgisayar ve Öğretim Teknolojileri Eğitimi</div>
+        <div class="edu-dates">Ekim 2022 — Haziran 2026</div>
+        <div class="gpa-row">
+          <div class="gpa-label"><span>Genel Not Ortalaması</span><span>3.49 / 4.00</span></div>
+          <div class="gpa-track"><div class="gpa-fill"></div></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===================== SKILLS / LEGEND ===================== -->
+  <div class="container">
+    <section id="beceriler" class="reveal">
+      <div class="section-head">
+        <p class="eyebrow">Açıklamalar</p>
+        <h2 class="section-title">Beceriler &amp; Araçlar</h2>
+      </div>
+
       <div class="legend">
-        <div>
-          <div class="legend-group-title">Öğretim Tasarımı</div>
-          <div class="legend-items">Articulate Storyline · Moodle LMS · SCORM · Storyboarding · İçerik Geliştirme</div>
-        </div>
-        <div>
-          <div class="legend-group-title">Geliştirme</div>
-          <div class="legend-items">Unity · C# · XR Interaction Toolkit · Blend Tree Animasyonu · iOS Yayınlama</div>
-        </div>
-        <div>
-          <div class="legend-group-title">Öğretim Yöntemleri</div>
-          <div class="legend-items">Oyunlaştırma · Oyun Tabanlı Öğrenme · Akran Eğitimi</div>
-        </div>
-        <div>
-          <div class="legend-group-title">Video Prodüksiyon</div>
-          <div class="legend-items">Adobe Premiere Pro · DaVinci Resolve · Ses Düzenleme · Yeşil Perde</div>
-        </div>
-        <div>
-          <div class="legend-group-title">Tasarım &amp; Prototipleme</div>
-          <div class="legend-items">Figma · UX/UI Tasarımı</div>
-        </div>
-        <div>
-          <div class="legend-group-title">Diğer</div>
-          <div class="legend-items">Git · GitHub · Türkçe (Anadil) · İngilizce (B2)</div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <p class="legend-title">Lejant — kullanılan yöntem ve araçlar</p>
 
-  <!-- ================= FOOTER ================= -->
-  <footer>
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-cta">
-          <h2>Bir sonraki projeyi birlikte kurgulayalım.</h2>
-          <p>Senaryodan etkileşime, etkileşimden SCORM çıktısına — sürecin her adımı için bana ulaşabilirsiniz.</p>
+        <div class="legend-row">
+          <span class="legend-key"><span class="legend-swatch"></span>Öğretim Tasarımı</span>
+          <div class="legend-chips">
+            <span class="chip">Articulate Storyline</span><span class="chip">Moodle LMS</span>
+            <span class="chip">SCORM</span><span class="chip">Storyboarding</span><span class="chip">İçerik Geliştirme</span>
+          </div>
         </div>
-        <div class="footer-contacts">
-          <a href="mailto:latifcetin043@gmail.com">latifcetin043@gmail.com</a>
-          <a href="tel:+905318748794">+90 531 874 87 94</a>
-          <a href="https://linkedin.com/in/latcetin" target="_blank" rel="noopener">linkedin.com/in/latcetin</a>
-          <a href="https://github.com/latifcetin" target="_blank" rel="noopener">github.com/latifcetin</a>
-          <!-- BURAYA LİNK EKLE: CV PDF'ini bir yere (GitHub repo, Google Drive vb.) yükleyip linkini buraya koy -->
-          <a href="PLACEHOLDER_LINK_CV" target="_blank" rel="noopener">CV'yi indir (PDF)</a>
+
+        <div class="legend-row">
+          <span class="legend-key"><span class="legend-swatch"></span>Öğretim Yöntemleri</span>
+          <div class="legend-chips">
+            <span class="chip">Oyunlaştırma</span><span class="chip">Oyun Tabanlı Öğrenme</span><span class="chip">Akran Eğitimi</span>
+          </div>
+        </div>
+
+        <div class="legend-row">
+          <span class="legend-key"><span class="legend-swatch"></span>Geliştirme</span>
+          <div class="legend-chips">
+            <span class="chip">Unity</span><span class="chip">C#</span><span class="chip">XR Interaction Toolkit</span>
+            <span class="chip">Blend Tree Animasyonu</span><span class="chip">iOS Yayınlama</span>
+          </div>
+        </div>
+
+        <div class="legend-row">
+          <span class="legend-key"><span class="legend-swatch"></span>Tasarım &amp; Prototipleme</span>
+          <div class="legend-chips">
+            <span class="chip">Figma</span><span class="chip">UX/UI Tasarımı</span>
+          </div>
+        </div>
+
+        <div class="legend-row">
+          <span class="legend-key"><span class="legend-swatch"></span>Video Prodüksiyon</span>
+          <div class="legend-chips">
+            <span class="chip">Adobe Premiere Pro</span><span class="chip">DaVinci Resolve</span>
+            <span class="chip">Ses Düzenleme</span><span class="chip">Yeşil Perde</span>
+          </div>
+        </div>
+
+        <div class="legend-row">
+          <span class="legend-key"><span class="legend-swatch"></span>Versiyon Kontrolü</span>
+          <div class="legend-chips"><span class="chip">Git</span><span class="chip">GitHub</span></div>
+        </div>
+
+        <div class="legend-row">
+          <span class="legend-key"><span class="legend-swatch"></span>Diller</span>
+          <div class="legend-chips">
+            <span class="chip">Türkçe — Anadil</span><span class="chip">İngilizce — B2</span>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span>LATİF ÇETİN · EĞİTİM TEKNOLOJİLERİ PORTFOLYOSU</span>
-        <span>REV. 2026</span>
+    </section>
+  </div>
+
+  <!-- ===================== CONTACT / TITLE BLOCK ===================== -->
+  <div class="container">
+    <section id="iletisim" class="reveal">
+      <div class="section-head">
+        <p class="eyebrow">Sayfa 1 / 1</p>
+        <h2 class="section-title">İletişim</h2>
+        <p class="section-intro">Bir proje konuşmak, staj/iş fırsatı paylaşmak ya da yalnızca merhaba demek için aşağıdaki kanallardan ulaşabilirsiniz.</p>
       </div>
-    </div>
-  </footer>
+
+      <div class="titleblock">
+        <div class="tb-row">
+          <div class="tb-cell"><span class="tb-label">Çizen</span><span class="tb-value">Latif Çetin</span></div>
+          <div class="tb-cell"><span class="tb-label">Tarih</span><span class="tb-value">Haziran 2026</span></div>
+        </div>
+        <div class="tb-row">
+          <div class="tb-cell"><span class="tb-label">Ölçek</span><span class="tb-value">1:1</span></div>
+          <div class="tb-cell"><span class="tb-label">Sayfa</span><span class="tb-value">1 / 1</span></div>
+        </div>
+        <div class="tb-row">
+          <div class="tb-cell"><span class="tb-label">E‑posta</span><span class="tb-value"><a href="mailto:latifcetin043@gmail.com">latifcetin043@gmail.com</a></span></div>
+          <div class="tb-cell"><span class="tb-label">Telefon</span><span class="tb-value"><a href="tel:+905318748794">+90 531 874 87 94</a></span></div>
+        </div>
+        <div class="tb-row">
+          <div class="tb-cell"><span class="tb-label">LinkedIn</span><span class="tb-value"><a href="https://linkedin.com/in/latcetin" target="_blank" rel="noopener">linkedin.com/in/latcetin</a></span></div>
+          <div class="tb-cell"><span class="tb-label">GitHub</span><span class="tb-value"><a href="https://github.com/latifcetin" target="_blank" rel="noopener">github.com/latifcetin</a></span></div>
+        </div>
+        <div class="tb-row">
+          <div class="tb-cell span-2"><span class="tb-label">Web</span><span class="tb-value"><a href="https://latifcetin.github.io" target="_blank" rel="noopener">latifcetin.github.io</a></span></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer>
+  <p class="foot-note">© 2026 Latif Çetin — HTML &amp; CSS ile çizildi.</p>
+</footer>
+
+<script>
+(function(){
+  /* ---------- Scroll reveal ---------- */
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  /* ---------- Orthographic projection widget ---------- */
+  var svg = document.querySelector('.ortho-svg');
+  if(!svg) return;
+
+  var MARGIN = 15, RANGE = 120;
+  var state = { x: 62, y: 58, z: 38 };
+
+  function clamp(v){ return Math.max(0, Math.min(100, v)); }
+  function px(v){ return MARGIN + (v/100) * RANGE; }
+  function pxInv(v){ return MARGIN + ((100 - v)/100) * RANGE; }
+
+  var frontPt = document.getElementById('front-pt');
+  var sidePt  = document.getElementById('side-pt');
+  var topPt   = document.getElementById('top-pt');
+  var ftLine  = document.getElementById('ft-line');
+  var fsLine  = document.getElementById('fs-line');
+  var tsLine  = document.getElementById('ts-line');
+  var cx_ = document.getElementById('coord-x');
+  var cy_ = document.getElementById('coord-y');
+  var cz_ = document.getElementById('coord-z');
+
+  function render(){
+    var cxF = px(state.x),      cyF = pxInv(state.y);
+    var cxS = 170 + px(state.z), cyS = pxInv(state.y);
+    var cxT = px(state.x),      cyT = 170 + px(state.z);
+
+    frontPt.setAttribute('cx', cxF); frontPt.setAttribute('cy', cyF);
+    sidePt.setAttribute('cx', cxS);  sidePt.setAttribute('cy', cyS);
+    topPt.setAttribute('cx', cxT);   topPt.setAttribute('cy', cyT);
+
+    ftLine.setAttribute('x1', cxF); ftLine.setAttribute('y1', cyF);
+    ftLine.setAttribute('x2', cxT); ftLine.setAttribute('y2', cyT);
+
+    fsLine.setAttribute('x1', cxF); fsLine.setAttribute('y1', cyF);
+    fsLine.setAttribute('x2', cxS); fsLine.setAttribute('y2', cyS);
+
+    var miterX = cyT; // point lies on the y=x diagonal
+    tsLine.setAttribute('points', cxT+','+cyT+' '+miterX+','+miterX+' '+cxS+','+cyS);
+
+    cx_.textContent = Math.round(state.x);
+    cy_.textContent = Math.round(state.y);
+    cz_.textContent = Math.round(state.z);
+  }
+
+  function getLocal(evt){
+    var pt = svg.createSVGPoint();
+    pt.x = evt.clientX; pt.y = evt.clientY;
+    var ctm = svg.getScreenCTM();
+    return pt.matrixTransform(ctm.inverse());
+  }
+
+  function setFromFront(p){
+    state.x = clamp(((p.x - MARGIN) / RANGE) * 100);
+    state.y = clamp((1 - (p.y - MARGIN) / RANGE) * 100);
+    render();
+  }
+  function setFromTop(p){
+    state.x = clamp(((p.x - MARGIN) / RANGE) * 100);
+    state.z = clamp(((p.y - 170 - MARGIN) / RANGE) * 100);
+    render();
+  }
+  function setFromSide(p){
+    state.z = clamp(((p.x - 170 - MARGIN) / RANGE) * 100);
+    state.y = clamp((1 - (p.y - MARGIN) / RANGE) * 100);
+    render();
+  }
+
+  function makeDraggable(hitEl, setter){
+    var dragging = false;
+    hitEl.addEventListener('pointerdown', function(e){
+      dragging = true;
+      hitEl.setPointerCapture(e.pointerId);
+      setter(getLocal(e));
+    });
+    hitEl.addEventListener('pointermove', function(e){
+      if(!dragging) return;
+      setter(getLocal(e));
+    });
+    function end(){ dragging = false; }
+    hitEl.addEventListener('pointerup', end);
+    hitEl.addEventListener('pointercancel', end);
+  }
+
+  makeDraggable(document.getElementById('front-hit'), setFromFront);
+  makeDraggable(document.getElementById('top-hit'), setFromTop);
+  makeDraggable(document.getElementById('side-hit'), setFromSide);
+
+  render();
+})();
+</script>
 
 </body>
 </html>
