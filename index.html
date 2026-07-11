@@ -519,13 +519,13 @@
   // bulunamayan markalarda ilgili sitenin favicon'u (gerçek uygulama ikonu) kullanılır.
   const tools = [
     {n:'Moodle', type:'simple', slug:'moodle'},
-    {n:'Articulate Storyline', type:'favicon', domain:'articulate.com'},
-    {n:'Unity', type:'iconify', slug:'logos:unity'},
+    {n:'Articulate Storyline 360', type:'favicon', domain:'articulate.com'},
+    {n:'Unity', type:'simple', slug:'unity', forceColor:'000000'},
     {n:'Figma', type:'iconify', slug:'logos:figma'},
     {n:'Adobe Illustrator', type:'iconify', slug:'logos:adobe-illustrator'},
     {n:'Adobe Animate', type:'iconify', slug:'logos:adobe-animate'},
     {n:'Premiere Pro', type:'iconify', slug:'logos:adobe-premiere'},
-    {n:'DaVinci Resolve', type:'simple', slug:'davinciresolve'},
+    {n:'Canva', type:'favicon', domain:'canva.com'},
     {n:'Camtasia', type:'favicon', domain:'camtasia.techsmith.com'},
   ];
   const grid = document.getElementById('icon-grid');
@@ -537,7 +537,8 @@
     const img = document.createElement('img');
     img.alt = t.n;
     if(t.type === 'simple'){
-      img.src = `https://cdn.simpleicons.org/${t.slug}`;
+      const color = t.forceColor || '';
+      img.src = `https://cdn.simpleicons.org/${t.slug}${color ? '/'+color : ''}`;
     } else if(t.type === 'iconify'){
       img.src = `https://api.iconify.design/${t.slug}.svg`;
     } else if(t.type === 'favicon'){
