@@ -112,9 +112,29 @@
   .proj-body p{color:var(--muted); font-size:14.5px; max-width:640px; margin:14px 0 18px; line-height:1.65;}
   .proj-shot{
     width:100%; max-width:520px; aspect-ratio:16/10; border-radius:10px; overflow:hidden;
-    border:1px solid var(--line-strong); background:var(--bg-soft-2);
+    border:1px solid var(--line-strong); background:var(--bg-soft-2); position:relative; cursor:zoom-in;
   }
-  .proj-shot img{width:100%; height:100%; object-fit:cover; display:block;}
+  .proj-shot img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .35s ease;}
+  .proj-shot:hover img{transform:scale(1.04);}
+  .proj-shot::after{
+    content:'⤢ büyüt'; position:absolute; right:10px; bottom:10px; font-family:'Space Mono',monospace;
+    font-size:11px; color:#fff; background:rgba(21,21,26,.72); padding:5px 9px; border-radius:6px;
+    opacity:0; transition:opacity .2s ease; pointer-events:none;
+  }
+  .proj-shot:hover::after{opacity:1;}
+  .lightbox{
+    position:fixed; inset:0; background:rgba(15,15,18,.88); display:none; align-items:center; justify-content:center;
+    z-index:999; padding:40px; cursor:zoom-out;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:min(1100px,92vw); max-height:88vh; border-radius:10px; box-shadow:0 20px 60px rgba(0,0,0,.4); cursor:default;}
+  .lightbox-close{
+    position:absolute; top:24px; right:32px; width:40px; height:40px; border-radius:50%;
+    background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.25); color:#fff;
+    font-size:20px; line-height:1; display:flex; align-items:center; justify-content:center; cursor:pointer;
+  }
+  .lightbox-close:hover{background:rgba(255,255,255,.18);}
+  @media(max-width:700px){.lightbox{padding:16px;} .lightbox-close{top:14px; right:16px;}}
   .proj-link{
     display:inline-flex; align-items:center; gap:8px; margin-top:14px;
     font-family:'Space Mono',monospace; font-size:12px; color:var(--accent);
@@ -552,6 +572,32 @@
     tile.appendChild(name);
     grid.appendChild(tile);
   });
+</script>
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-close" id="lightbox-close">×</div>
+  <img src="" alt="" id="lightbox-img">
+</div>
+<script>
+(function(){
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.getElementById('lightbox-close');
+  document.querySelectorAll('.proj-shot img').forEach(img=>{
+    img.addEventListener('click', ()=>{
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e)=>{ if(e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeLightbox(); });
+})();
 </script>
 </body>
 </html>
